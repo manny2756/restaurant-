@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.Signin"
+             BackgroundImageSource="background.png">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+    <StackLayout Padding="20"  >
+      <Label Text="Log In" TextColor="White" FontAttributes="Bold" FontSize="Header" VerticalOptions="CenterAndExpand"  HorizontalOptions="Center"/>
+      <StackLayout Padding="20,20" Orientation="Vertical" VerticalOptions="StartAndExpand">
+        <Entry Placeholder="Email" PlaceholderColor="Black" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7"/>
+        <Entry Placeholder="Password" PlaceholderColor="Black" IsPassword="True" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7"/>
+        <Button Text="Sign In" Clicked="SignIn_Clicked"/>
+        <Label Text="Create an account?" TextColor="White" FontAttributes="Bold" FontSize="Subtitle" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+               <TapGestureRecognizer Tapped="CreateAccount_Clicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label Text="Continue as guest?" TextColor="White" FontAttributes="Bold" FontSize="Subtitle" HorizontalOptions="CenterAndExpand" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Guest_Clicked"/>
+            </Label.GestureRecognizers>
+          
+        </Label>
+      </StackLayout>
+    </StackLayout>
+
+  </ContentPage.Content>
+</ContentPage>

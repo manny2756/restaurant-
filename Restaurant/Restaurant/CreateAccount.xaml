@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.CreateAccount">
+    <ContentPage.Content>
+    <StackLayout Padding=" 30" >
+      <Label Text="Create an Account " FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+      <StackLayout Padding="20">
+       
+      
+          <Entry Placeholder="First Name" BackgroundColor="#e5e5e5" />
+          <Entry Placeholder="Last Name"/>
+          <Entry Placeholder="Email"/>
+          <Entry Placeholder="Create password"/>
+          <Entry Placeholder="Confirm password"/>
+          <Label Text="Date of Birth"/>
+      <StackLayout Orientation="Horizontal">
+        <DatePicker />
+      </StackLayout>
+      </StackLayout>
+      
+      <Button Text="Create account" Clicked="CreateAccount_Clicked" TextColor="White" BackgroundColor="#1DA1F2" VerticalOptions="EndAndExpand" />
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

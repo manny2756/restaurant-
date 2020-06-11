@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.LandingPage">
+
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+  <ContentPage.Content>
+    
+    <StackLayout Padding="0" BackgroundColor="Black" >
+      <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Image Grid.Row="0" Aspect="AspectFill" Source="foodlayout.png" Opacity="0.5" />
+        <StackLayout Grid.Row="0" >
+          
+       <Image Source="burger.png"></Image>
+        <StackLayout  >
+
+
+
+            <StackLayout Spacing="20" Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="40,0" Margin="0,50,0,65">
+          <Button Clicked="Menu_Clicked"  Text="Menu" HorizontalOptions="Fill"  FontSize="35" BackgroundColor="White" TextColor="Black" Opacity="0.81">
+          <Button.WidthRequest>
+            <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
+          </Button.WidthRequest>
+          <Button.HeightRequest>
+            <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
+          </Button.HeightRequest>
+          <Button.BorderRadius>
+            <OnIdiom x:TypeArguments="x:Int32" Phone="20" Tablet="40" />
+          </Button.BorderRadius>
+        </Button>
+          <Button Clicked="Specials_Clicked" Opacity="0.81" Text="Specials"  BackgroundColor="White" TextColor="Black" FontSize="35"  >
+          <Button.WidthRequest>
+            <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
+          </Button.WidthRequest>
+          <Button.HeightRequest>
+            <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
+          </Button.HeightRequest>
+          <Button.BorderRadius>
+            <OnIdiom x:TypeArguments="x:Int32" Phone="20" Tablet="40" />
+          </Button.BorderRadius>
+        </Button>
+          
+      </StackLayout>
+            <Grid>
+
+
+              <Frame   Padding="0" HorizontalOptions="Center" VerticalOptions="EndAndExpand"  HeightRequest="45" MinimumWidthRequest="100"  WidthRequest="200"
+              Opacity="0.4"   BorderColor="White" CornerRadius="22.5"  BackgroundColor="Black" >
+                
+                
+              </Frame>
+              <Label Text="Sign in" Opacity="1" TextColor="#fffcfc" FontSize="18" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+                <Grid.GestureRecognizers >
+
+                  <TapGestureRecognizer Tapped="Signin_Clicked">
+
+                  </TapGestureRecognizer>
+
+                </Grid.GestureRecognizers>
+
+
+            </Grid>
+
+
+
+          </StackLayout>
+        </StackLayout>
+      </Grid>
+    </StackLayout>
+    
+    
+    
+    </ContentPage.Content>
+</ContentPage>

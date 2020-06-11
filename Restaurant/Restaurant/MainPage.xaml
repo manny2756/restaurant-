@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.MainPage">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+  <StackLayout Spacing="0" VerticalOptions="Start" >
+    <!-- Place new controls here -->
+    <StackLayout BackgroundColor="Black" >
+      <Grid>
+        <Image   Source="topfoodlayout.png"  Aspect="AspectFill" Opacity="0.5" HeightRequest="180"/>
+      </Grid>
+      
+    </StackLayout>
+    
+    <restaurant:View1/>
+    <Grid VerticalOptions="FillAndExpand">
+      
+        <restaurant:Sales x:Name="HomeView" x:FieldModifier="public" Grid.Column="0" Grid.Row="0"/>
+
+      <restaurant:Menu IsVisible="False" x:Name="MenuPage"  x:FieldModifier="public"/>
+      <restaurant:Sales IsVisible="False" x:Name="SalesPage" x:FieldModifier="public"/>
+      <restaurant:Services IsVisible="False" x:Name="ServicesPage" x:FieldModifier="public"/>
+      <restaurant:Checkout IsVisible="False" x:Name="CheckoutPage" x:FieldModifier="public"/>
+    </Grid>
+    <BoxView BackgroundColor="Black" HeightRequest="0" HorizontalOptions="FillAndExpand"></BoxView>
+   
+
+    <StackLayout.Padding>
+      <OnPlatform x:TypeArguments="Thickness">
+        <On Platform="iOS" Value="0,40,0,0"/>
+        <On Platform="Android" Value="0"/>
+        
+      </OnPlatform>
+      
+    </StackLayout.Padding>
+
+
+
+  </StackLayout>
+
+</ContentPage>

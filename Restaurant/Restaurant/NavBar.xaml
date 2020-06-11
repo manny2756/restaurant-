@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.NavBar">
+  <ContentView.Content>
+    <StackLayout  HeightRequest="65" Spacing="0" BackgroundColor="Red">
+      <StackLayout Orientation="Horizontal" HeightRequest="64" VerticalOptions="Fill">
+        <Label Text="Home" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" Padding="10">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+          </Label.GestureRecognizers>
+        </Label>  
+          
+          <Label Text="Restaurant"  FontAttributes="Bold" FontSize="24" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        <Label Text="Cart" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" Padding="10"></Label>
+      </StackLayout>
+        <BoxView BackgroundColor="black" HeightRequest="0.5" HorizontalOptions="FillAndExpand" ></BoxView>
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

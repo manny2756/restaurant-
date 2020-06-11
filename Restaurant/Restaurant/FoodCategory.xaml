@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.FoodCategory">
+  <ContentView.Content>
+    
+      <StackLayout HeightRequest="110" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+      <StackLayout HeightRequest="109" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10,0">
+        <Image HeightRequest="50"  WidthRequest="85" HorizontalOptions="End" Source="{Binding LeftImage}"></Image>
+        <Label Text="{Binding CategoryName}"   VerticalOptions="CenterAndExpand"  HorizontalOptions="Start" FontSize="Large" FontAttributes="Bold" TextColor="#5d878d" />
+        <Image HeightRequest="20" HorizontalOptions="EndAndExpand" Source="{Binding Image}" ></Image>
+      </StackLayout>
+      <BoxView BackgroundColor="#e5e5e5" HeightRequest="1" HorizontalOptions="FillAndExpand" ></BoxView>
+        <StackLayout.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+
+      </StackLayout.GestureRecognizers>
+
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

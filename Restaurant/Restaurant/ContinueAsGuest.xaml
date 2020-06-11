@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.ContinueAsGuest">
+    <ContentPage.Content>
+    <StackLayout Padding=" 0" HorizontalOptions="Fill" >
+      <Label Text="Guest Log In" TextColor="Black" FontSize="40" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand"/>
+      
+         
+      <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+        <Entry Placeholder="First Name" PlaceholderColor="Black" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7" WidthRequest="150"/>
+        <Entry Placeholder="Last Name" PlaceholderColor="Black" IsPassword="True" VerticalOptions="Start"  Opacity="0.7" WidthRequest="150"/>
+        <Entry Placeholder="Address" PlaceholderColor="Black" IsPassword="True" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7"/>
+        <Entry Placeholder="Email" PlaceholderColor="Black"/>
+        <Entry Placeholder="Create password" PlaceholderColor="Black"/>
+        <Entry Placeholder="Confirm password" PlaceholderColor="Black"/>
+        <Button Clicked="Guest_SignIn" Text="Sign In" VerticalOptions="End"/>
+      </StackLayout>
+      
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

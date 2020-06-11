@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.Menu">
+
+  <ContentView.Content> 
+    <Grid>
+
+        <ScrollView Grid.Row="0" Grid.Column="0" x:Name="CategoriesScroll">
+        <StackLayout Spacing="0"  >
+          <restaurant:FoodCategory LeftImage="breakFast2.png" CategoryName="Breakfast" Image="arrow.png" CategoryId="Breakfast"></restaurant:FoodCategory>
+          <restaurant:FoodCategory LeftImage="threeburgers.png" CategoryName="Meals"  Image="arrow.png" CategoryId="Meals"></restaurant:FoodCategory>
+          <restaurant:FoodCategory LeftImage="salads.png" CategoryName="Salads"  Image="arrow.png" CategoryId="Salads" ></restaurant:FoodCategory>
+          <restaurant:FoodCategory LeftImage="entrees.png" CategoryName="Appetizers"  Image="arrow.png" CategoryId="Appetizers"></restaurant:FoodCategory>
+          <restaurant:FoodCategory LeftImage="drinks.png" CategoryName="Drinks"  Image="arrow.png" CategoryId="Drinks"></restaurant:FoodCategory>
+          <restaurant:FoodCategory LeftImage="cookies.png" CategoryName="Other"  Image="arrow.png" CategoryId="Other"></restaurant:FoodCategory>
+        </StackLayout>
+       
+          
+        
+      </ScrollView>
+      <StackLayout Grid.Row="0" Grid.Column="0" Opacity="0" IsVisible="False" x:Name="ItemsScroll">
+        <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="#e5e5e5">
+          <Image Source="arrow.png" Rotation="180" HeightRequest="40" VerticalOptions="Center">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="BackToCatButton_Clicked"/>
+
+            </Image.GestureRecognizers>
+
+          </Image>
+          <Label FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" x:Name="CatTitle"  TranslationX="-20" />
+
+        </StackLayout>
+        
+      <ScrollView >
+        <StackLayout Spacing="0"  Padding="0,6,0,0" x:Name="FoodItemsStack">
+
+                        
+
+
+          </StackLayout>
+
+
+
+      </ScrollView>
+      </StackLayout>
+    </Grid>
+    </ContentView.Content>
+</ContentView>
