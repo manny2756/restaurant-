@@ -2,22 +2,24 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
              mc:Ignorable="d"
              x:Class="Restaurant.NavBar">
-  <ContentView.Content>
-    <StackLayout  HeightRequest="65" Spacing="0" BackgroundColor="Red">
-      <StackLayout Orientation="Horizontal" HeightRequest="64" VerticalOptions="Fill">
-        <Label Text="Home" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" Padding="10">
-          <Label.GestureRecognizers>
-            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-          </Label.GestureRecognizers>
-        </Label>  
-          
-          <Label Text="Restaurant"  FontAttributes="Bold" FontSize="24" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-        <Label Text="Cart" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" Padding="10"></Label>
-      </StackLayout>
-        <BoxView BackgroundColor="black" HeightRequest="0.5" HorizontalOptions="FillAndExpand" ></BoxView>
-    </StackLayout>
-  </ContentView.Content>
+
+  <StackLayout Orientation="Horizontal" Padding="10,10,20,10" HeightRequest="35">
+
+
+    <Image Source="redarrow.png" VerticalOptions="FillAndExpand" HorizontalOptions="Start" HeightRequest="45">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer Tapped="Back_Tapped"></TapGestureRecognizer>
+      </Image.GestureRecognizers>
+    </Image>
+    <Label Text=" Restaurant Name " FontAttributes="Bold" TextColor="#5d878d" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="20"/>
+    <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="24" HeightRequest="18" >
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer x:Name="xTapGestRec" Tapped="MenuBars_Tapped"></TapGestureRecognizer>
+      </Image.GestureRecognizers>
+    </Image>
+</StackLayout>
+  
 </ContentView>

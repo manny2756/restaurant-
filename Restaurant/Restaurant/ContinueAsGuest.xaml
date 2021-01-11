@@ -5,21 +5,48 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Restaurant.ContinueAsGuest">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
     <ContentPage.Content>
-    <StackLayout Padding=" 0" HorizontalOptions="Fill" >
-      <Label Text="Guest Log In" TextColor="Black" FontSize="40" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand"/>
+    <StackLayout Padding=" 0" HorizontalOptions="Fill" BackgroundColor="Black">
       
-         
-      <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
-        <Entry Placeholder="First Name" PlaceholderColor="Black" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7" WidthRequest="150"/>
-        <Entry Placeholder="Last Name" PlaceholderColor="Black" IsPassword="True" VerticalOptions="Start"  Opacity="0.7" WidthRequest="150"/>
-        <Entry Placeholder="Address" PlaceholderColor="Black" IsPassword="True" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7"/>
-        <Entry Placeholder="Email" PlaceholderColor="Black"/>
-        <Entry Placeholder="Create password" PlaceholderColor="Black"/>
-        <Entry Placeholder="Confirm password" PlaceholderColor="Black"/>
-        <Button Clicked="Guest_SignIn" Text="Sign In" VerticalOptions="End"/>
-      </StackLayout>
-      
+      <Grid>
+        <Image Grid.Row="0" Aspect="AspectFill" Source="foodlayout.png" Opacity="0.5" VerticalOptions="CenterAndExpand"/>
+        
+        
+       <StackLayout Padding="45,25,45,0" VerticalOptions="Center">
+          <Image Source="logo01.png" HeightRequest="100"/>
+          <Label Text="Guest Sign In" TextColor="White" FontSize="25" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand"/>
+
+          <ScrollView>
+            <StackLayout>
+              <Entry Placeholder="Email" PlaceholderColor="Black"  BackgroundColor="White" Opacity="0.7"/>        
+              <Entry Placeholder="Full Name" PlaceholderColor="Black" VerticalOptions="Start" HorizontalOptions="Start" BackgroundColor="White" Opacity="0.7" WidthRequest="400"/>
+              <Entry Placeholder="Address" PlaceholderColor="Black"  VerticalOptions="Start"   BackgroundColor="White" Opacity="0.7" WidthRequest="135"/>
+              <Entry Placeholder="Phone Number" PlaceholderColor="Black" Keyboard="Numeric" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7"/>
+              <Entry Placeholder="Create password" PlaceholderColor="Black" IsPassword="True" BackgroundColor="White" Opacity="0.7"/>
+              <Entry Placeholder="Confirm password" PlaceholderColor="Black" IsPassword="True" BackgroundColor="White" Opacity="0.7"/>
+              <Grid>
+                <Frame Padding="0" HorizontalOptions="Center" VerticalOptions="EndAndExpand"  HeightRequest="45" MinimumWidthRequest="100" 
+                       WidthRequest="200" Opacity="0.3"  BorderColor="#707070" CornerRadius="22.5"  BackgroundColor="Black" >
+                </Frame>
+                <Label Text="Sign In" Opacity="1" TextColor="#fffcfc" FontSize="20" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                  <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                      <On Platform="iOS">NotoSans-Regular</On>
+                      <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                    </OnPlatform>
+                  </Label.FontFamily>
+                </Label>
+                <Grid.GestureRecognizers >
+                  <TapGestureRecognizer Tapped="Guest_SignIn"></TapGestureRecognizer>
+                </Grid.GestureRecognizers>
+              </Grid>
+
+            </StackLayout>
+          </ScrollView>
+ 
+        </StackLayout>
+      </Grid>
     </StackLayout>
     </ContentPage.Content>
 </ContentPage>

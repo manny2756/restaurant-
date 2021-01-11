@@ -15,15 +15,70 @@ namespace Restaurant
     public NavBar()
     {
       InitializeComponent();
+      BindingContext = this;
+     
+    }
+    
+    public string Image
+
+    {
+
+      get => (string)GetValue(ImageProperty);
+
+      set => SetValue(ImageProperty, value);
+
     }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-      MainPage.Current.HomeView.IsVisible = false;
-      MainPage.Current.MenuPage.IsVisible = true;
-      MainPage.Current.SalesPage.IsVisible = false;
-      MainPage.Current.ServicesPage.IsVisible = false;
-      MainPage.Current.CheckoutPage.IsVisible = false;
+    public static readonly BindableProperty ImageProperty = BindableProperty.Create(
+
+                                                         propertyName: "Image",
+                                                         returnType: typeof(string),
+
+                                                         declaringType: typeof(NavBar),
+
+                                                         defaultBindingMode: BindingMode.TwoWay
+                                                         );
+    public string XTapped
+
+    {
+
+      get => (string)GetValue(XTappedProperty);
+
+      set => SetValue(XTappedProperty, value);
+
     }
+
+    public static readonly BindableProperty XTappedProperty = BindableProperty.Create(
+
+                                                         propertyName: "XTapped",
+                                                         returnType: typeof(string),
+
+                                                         declaringType: typeof(NavBar),
+
+                                                         defaultBindingMode: BindingMode.TwoWay
+                                                         );
+
+
+    public bool isXButton;
+    private void MenuBars_Tapped(object sender, EventArgs e)
+    {
+      if (isXButton)
+      {
+        Navigation.PopAsync();
+      }
+      else
+      {
+        Navigation.PushAsync(new SideMenu());
+      }
     }
+
+    private void Back_Tapped(object sender, EventArgs e)
+    {
+      Navigation.PopAsync();
+    }
+    private void X_Tapped(object sender, EventArgs e)
+    {
+      Navigation.PopAsync();
+    }
+  }
 }

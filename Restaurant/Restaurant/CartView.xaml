@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.CartView">
+  <ContentView.Content>
+      <StackLayout Padding="10,0,10,0"  Orientation="Horizontal" HeightRequest="50" WidthRequest="400" BackgroundColor="#bd2c36" 
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+      <Image Source="number1.png" HeightRequest="20" HorizontalOptions="Start"/>
+
+
+      <Label Text="Items" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontSize="20" TranslationX="-25">
+        <Label.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS">SinhalaMN</On>
+            <On Platform="Android">SinhalaMN.ttf#Sinhala</On>
+          </OnPlatform>
+        </Label.FontFamily>
+      </Label>
+
+      <Label Text="Total: $16.06" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontSize="20" TranslationX="-35">
+        <Label.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS">SinhalaMN</On>
+            <On Platform="Android">SinhalaMN.ttf#Sinhala</On>
+          </OnPlatform>
+        </Label.FontFamily>
+      </Label>
+      <Image Source="cart03.png" HeightRequest="30">
+        
+      </Image>
+<StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Cart_Clicked">
+
+          </TapGestureRecognizer>
+
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+  </ContentView.Content>
+</ContentView> 

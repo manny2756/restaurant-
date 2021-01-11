@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
+
 namespace Restaurant
 {
   // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -24,13 +26,15 @@ namespace Restaurant
     {
       InitializeComponent();
       Current = this;
+       
+      
       if (page == "Specials")
       {
-        
+        Tabs.SelectSpecialsTab(); 
       }
       else if (page == "Menu")
       {
-
+        Tabs.SelectMenuTab();
       }
     }
 

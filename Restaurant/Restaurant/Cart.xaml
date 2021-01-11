@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.Cart">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+    <StackLayout Padding="0,0,0,0" BackgroundColor="White" HeightRequest="60" >
+      <restaurant:NavBar Image="X.png" XTapped="X_Tapped" ></restaurant:NavBar>
+    
+        <StackLayout Padding="20,0,20,0">
+      
+      <Frame CornerRadius="58" HasShadow="True" Padding="0" HeightRequest="100" WidthRequest="116" BackgroundColor="White" BorderColor="Transparent">
+         <Image  Source="logo01.png" HeightRequest="115" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+      </Frame>
+          
+          
+          <StackLayout Padding="0">
+        <Label Text="My Order" TextColor="#5d878d"  FontSize="36" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <On Platform="iOS">NotoSans-Regular</On>
+              <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+           <BoxView HeightRequest="1" BackgroundColor=" #e7e7e7"/>  
+            
+        <StackLayout HeightRequest="85"> <!--itemview-->
+          
+          <Label Padding=" 0"  HeightRequest="25" Text="Blue Berry Pancakes" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" BackgroundColor="White" FontSize="20" FontAttributes="Bold"  ></Label>
+          
+          <Grid>
+            <Label Text="Four blue berry butter pancakes&#10;served with peppermint leaves.&#10;100 cal per serving" TextColor="Black"  FontSize="12">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Text="$12.99" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  TextColor="#bd2c36" TranslationY="-15">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            
+            <StackLayout Orientation="Horizontal" HeightRequest="30" WidthRequest="75" VerticalOptions="End" HorizontalOptions="End" BackgroundColor="#ecf5f6">
+              <Image Source="editicon.png" HeightRequest="10" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Image>
+              <Label Text=" Edit" TextColor="Black" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" TranslationX="-15">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>
+                <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="EditItem_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+              </StackLayout>
+            
+          </Grid>
+          <BoxView  VerticalOptions="End" HeightRequest="1" BackgroundColor=" #e7e7e7"/>
+        
+        </StackLayout>
+        <StackLayout >
+          <!--itemview-->
+
+          <Label Padding=" 0" HeightRequest="25" Text="Scrabble Breakfast" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" BackgroundColor="White" FontSize="20" FontAttributes="Bold"  ></Label>
+
+          <Grid>
+            <Label   Padding="0" Text="Four blue berry butter pancakes&#10;served with peppermint leaves.&#10;100 cal per serving" TextColor="Black"  FontSize="12">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Text="$10.99" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  TextColor="#bd2c36" TranslationY="-15">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+
+            <StackLayout Orientation="Horizontal" HeightRequest="30" WidthRequest="75" VerticalOptions="End" HorizontalOptions="End" BackgroundColor="#ecf5f6">
+              <Image Source="editicon.png" HeightRequest="10" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Image>
+              <Label Text=" Edit" TextColor="Black" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" TranslationX="-15">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>
+                <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="EditItem_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+              </StackLayout>
+
+          </Grid>
+          <BoxView  VerticalOptions="End" HeightRequest="1" BackgroundColor=" #e7e7e7"/>
+
+        </StackLayout>
+        
+            
+        <StackLayout Padding="20,5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+          <Label Text="Rewards" TextColor="#bd2c36" HorizontalOptions="StartAndExpand" FontAttributes="Bold"/>
+          <Label Text="$10" TextColor="Black" HorizontalOptions="EndAndExpand"/>
+          <Image Source="checkboxsmall.png" HeightRequest="15" HorizontalOptions="EndAndExpand"/>
+          <Label Text="Apply" FontSize="14" TextColor="Black" HorizontalOptions="End"/>
+        </StackLayout>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        <StackLayout Padding="20,5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+          <Label Text="Payment" TextColor="Black" HorizontalOptions="StartAndExpand" FontAttributes="Bold"/>
+          <Image Source="Visa.png" HeightRequest="15" HorizontalOptions="CenterAndExpand"/>
+          <Label Text="****1286" FontAttributes="Bold" FontSize="14" TextColor="Black" HorizontalOptions="End"/>
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="PaymentMethod_Tapped"></TapGestureRecognizer>
+          </StackLayout.GestureRecognizers>
+        </StackLayout>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+      </StackLayout>
+          
+      <Grid HorizontalOptions="EndAndExpand" VerticalOptions="Center" TranslationY="30"> <!--Totals-->
+        <Label Grid.Row="0" Text="Sub-Total: $24.00" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
+        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="End">
+          <Image Source="eyeicon.png" HeightRequest="10" HorizontalOptions="End"/>
+          <Label  Text="Tax and Fees: $2.06" TextColor="Black" HorizontalOptions="End"></Label>
+          
+        </StackLayout>
+        
+        <StackLayout Grid.Row="2" Orientation="Horizontal">
+          <Label  Text="Rewards:" TextColor="Black" HorizontalOptions="EndAndExpand"></Label>
+          <Label  Text="-$10" TextColor="#bd2c36" HorizontalOptions="End"></Label>
+        </StackLayout>
+        
+
+        <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+          <Label  Text="Total:" TextColor="Black" FontAttributes="Bold">
+
+          </Label>
+          <Label  Text="$16.06" TextColor="#bd2c36" FontSize="16">
+
+          </Label>
+        </StackLayout>
+      </Grid>
+
+      <Button Margin="0,80,0,0" Clicked="OrderPlaced_Clicked"  Text="Placeorder" TextColor="White" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" HeightRequest="41" BackgroundColor="#bd2c36" >
+        <Button.BorderRadius >10</Button.BorderRadius>
+      </Button>
+
+    </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

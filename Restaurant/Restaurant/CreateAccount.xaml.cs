@@ -23,7 +23,7 @@ namespace Restaurant
       MainPage.Current.HomeView.IsVisible = false;
       MainPage.Current.MenuPage.IsVisible = false;
       MainPage.Current.SalesPage.IsVisible = true;
-      MainPage.Current.ServicesPage.IsVisible = false;
+      MainPage.Current.SpecialsPage.IsVisible = false;
     }
   }
 }

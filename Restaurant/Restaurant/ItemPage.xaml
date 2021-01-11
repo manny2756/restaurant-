@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.ItemPage">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+          <restaurant:NavBar Image="bars.png"></restaurant:NavBar>
+          
+      <Grid >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="75"/>
+          <RowDefinition Height="75"/>
+          <RowDefinition Height="35"/>
+          <RowDefinition Height="10"/>
+          
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="125"/>
+          <ColumnDefinition Width="130"/>
+          <ColumnDefinition Width="135"/>
+          <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+ 
+        <Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="3" x:FieldModifier="public " x:Name="itemImage"  Source="pasta.png" Aspect="AspectFill" />
+        <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="10"  Margin="-10,0,0,0"/>
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0" x:Name="itemName"  Text="Pasta e Fagioli"  TextColor="#5d878d" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+      </Grid>
+      <StackLayout Padding=" 10,10,0,10" >
+        <Label x:Name="Price" Text="$12.99" TextColor="#bd2c36" HorizontalOptions="Start" FontAttributes="Bold" FontSize="18"/>
+        <Label Text="150 cal per serving" TextColor="Black" HorizontalOptions="Start"  FontSize="10" Margin="0,-5,0,0"/>
+        <Label x:Name="Description" Text="Four blueberry buttermilk pancakes served with&#10;peppermint leaves and fresh blueberries." TextColor="Black" HorizontalOptions="Start"  FontSize="14"/>
+      </StackLayout>
+      <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+      <Grid> <!--options label-->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#ecf5f6" CornerRadius="5" />
+        <Label Grid.Row="0" Grid.Column="0" Text="Options" TextColor="Black" FontSize="16" FontAttributes="bold" BackgroundColor="AliceBlue" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+      </Grid>
+
+      <restaurant:RadioCheckStack Margin="20,10,0,10" x:Name="OptionsRadioStack">
+        <restaurant:RestaurantCheck IsChecked="true"></restaurant:RestaurantCheck>
+        <restaurant:RestaurantCheck IsChecked="false"></restaurant:RestaurantCheck>
+        <restaurant:RestaurantCheck IsChecked="false"></restaurant:RestaurantCheck>
+        
+        
+      </restaurant:RadioCheckStack>
+      <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+      <Grid>
+        <!--customization label-->
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#ecf5f6" CornerRadius="5" />
+        <Label Grid.Row="0" Grid.Column="0" Text="Customization" TextColor="Black" FontSize="16" FontAttributes="bold" BackgroundColor="AliceBlue" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0"/>
+      </Grid>
+      <restaurant:RadioCheckStack Margin="20,10,0,45">
+        <restaurant:RestaurantCheck IsChecked="true"></restaurant:RestaurantCheck>
+        <restaurant:RestaurantCheck IsChecked="false"></restaurant:RestaurantCheck>
+        
+      </restaurant:RadioCheckStack>
+      
+      <StackLayout Orientation="Horizontal" Padding="20,0,20,15">
+        <Label Text="Cost: $12.99" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"/> 
+        <Button Clicked="AddToCart_Tapped" Text="Add To Cart" TextColor="White" BackgroundColor="#bd2c36" HorizontalOptions="End" WidthRequest="175" CornerRadius="7"/>
+      </StackLayout>
+
+
+      <restaurant:CartView></restaurant:CartView>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

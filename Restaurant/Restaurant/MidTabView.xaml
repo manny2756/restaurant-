@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.MidTabView">
+  <ContentView.Content>
+    <StackLayout Padding="0" Spacing="0">
+      
+        <Grid Padding="0" HeightRequest="50" ColumnSpacing="0" BackgroundColor="#d7ecee" HorizontalOptions="FillAndExpand" > <!--three labels-->
+
+        <Label x:Name="HomeTab" Grid.Column="0" Text="Home" TextColor="Black" BackgroundColor="White" FontSize="16" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  VerticalOptions="FillAndExpand">
+          <Label.FontFamily>
+          <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS">NotoSans-Regular</On>
+            <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+          </OnPlatform>
+          </Label.FontFamily>
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Button_Clicked_2" />
+          </Label.GestureRecognizers>
+      </Label>
+        <Label  x:Name="SpecialsTab" Grid.Column="1" Text="Specials" TextColor="Black" FontSize="16" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand">
+
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <On Platform="iOS">NotoSans-Regular</On>
+              <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+            </OnPlatform>
+          </Label.FontFamily>
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Button_Clicked_1"/>
+          </Label.GestureRecognizers>
+      </Label>
+        <Label x:Name="MenuTab"  Grid.Column="2" Text="Menu" TextColor="Black" FontSize="16" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <On Platform="iOS">NotoSans-Regular</On>
+              <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+            </OnPlatform>
+          </Label.FontFamily>
+          <Label.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Button_Clicked"/>
+        </Label.GestureRecognizers> 
+      </Label>
+      </Grid>
+      
+    </StackLayout>
+
+  </ContentView.Content>
+</ContentView>

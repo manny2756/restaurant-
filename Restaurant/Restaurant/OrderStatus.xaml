@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.OrderStatus">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout Padding=" 0,0,20,0" Spacing="15">
+
+      <restaurant:NavBar Image="bars.png"> </restaurant:NavBar>
+      <StackLayout Padding="20,0,0,0">
+        
+      
+      <Label Text="Order Status" TextColor="#5d878d" FontSize="35" FontAttributes="Bold" HorizontalOptions="Center" />
+
+      <restaurant:Statusview></restaurant:Statusview>
+          
+      <StackLayout >
+        <Label Text="             Your payment has been processed!&#10;Details of the transaction has been included below" VerticalOptions="Start"
+               HorizontalOptions="Center"  FontSize="12"/>
+      </StackLayout>
+      <ScrollView>
+        <StackLayout>
+
+          <StackLayout  Spacing="6">
+        <Label Text="Order Details" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+        <Grid>
+          <Label Grid.Row="0" Grid.Column="0" Text="Order Date" TextColor="Black" FontSize="12"/>
+          <Label Grid.Row="0" Grid.Column="1" Text="Jun 11, 2020 " TextColor="Black" HorizontalOptions="End" FontSize="12"/>
+          <Label Grid.Row="1" Grid.Column="0" Text="Payment Type" TextColor="Black" FontSize="12"/>
+          <Label Grid.Row="1" Grid.Column="1" Text="Visa" TextColor="Black" HorizontalOptions="End" FontSize="12"/>
+              <Label Grid.Row="2" Grid.Column="0" Text="Order Number" TextColor="Black"/>
+          <Label Grid.Row="2" Grid.Column="1" Text="12234562" TextColor="Black" HorizontalOptions="End" FontSize="12"/>
+        </Grid>
+        
+      </StackLayout>
+        <BoxView HeightRequest="1" BackgroundColor="#e7e7e7" VerticalOptions="Center"/>
+      
+      <StackLayout Spacing=" 0" >
+        <!--itemview-->
+
+        <Label Padding=" 0" HeightRequest="35" Text="Blue Berry Pancakes" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  FontSize="16" FontAttributes="Bold" ></Label>
+
+        <Grid>
+          <Label   Padding="0" Text="Four blue berry butter pancakes&#10;served with peppermint leaves.&#10;100 Calories" TextColor="Black" FontSize="12">
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS">NotoSans-Regular</On>
+                <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
+          <Label Text="$12.99" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  TextColor="#e34b5c" TranslationY="-15  ">
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS">NotoSans-Regular</On>
+                <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
+
+          <StackLayout Orientation="Horizontal" HeightRequest="30" WidthRequest="75" VerticalOptions="End" HorizontalOptions="End" BackgroundColor="#ecf5f6">
+            <Image Source="editicon.png" HeightRequest="10" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Image>
+            <Label Text=" Edit" TextColor="Black" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" TranslationX="-15">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+                  <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="EditItem_Tapped"></TapGestureRecognizer>
+                  </StackLayout.GestureRecognizers>
+          </StackLayout>  <!--edit button-->
+
+        </Grid>
+        <BoxView  VerticalOptions="End" HeightRequest="1" BackgroundColor=" #e7e7e7"/>
+
+      </StackLayout>
+          
+      
+          <StackLayout Spacing="0" >
+            <!--itemview-->
+
+            <Label Padding=" 0" HeightRequest="35" Text="Scrabble Breakfast" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  FontSize="15" FontAttributes="Bold"   ></Label>
+
+            <Grid>
+              <Label   Padding="0" Text="Scrambled eggs, three chicken sausages&#10;Two peices of toast, 4 bacon strips &#10;190 Calories per serving" TextColor="Black"  FontSize="12">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>
+              <Label Text="$10.99" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  TextColor="#e34b5c" TranslationY="-15">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>
+
+              <StackLayout Orientation="Horizontal" HeightRequest="30" WidthRequest="75" VerticalOptions="End" HorizontalOptions="End" BackgroundColor="#ecf5f6">
+                <Image Source="editicon.png" HeightRequest="10" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Image>
+                <Label Text=" Edit" TextColor="Black" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" TranslationX="-15">
+                  <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                      <On Platform="iOS">NotoSans-Regular</On>
+                      <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                    </OnPlatform>
+                  </Label.FontFamily>
+                </Label>
+                  <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="EditItem_Tapped"></TapGestureRecognizer>
+                  </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+            </Grid>
+            <BoxView  VerticalOptions="End" HeightRequest="1" BackgroundColor=" #e7e7e7" Margin="0,50,0,0"/>
+
+          </StackLayout>
+          
+        </StackLayout>
+      </ScrollView>
+          <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand"  HorizontalOptions="End">
+            <Label Text="Total:" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+            <Label Text="$16.06" TextColor="#bd2c36" FontAttributes="Bold" FontSize="20"/>
+
+          </StackLayout>
+      <StackLayout Padding="20" VerticalOptions="EndAndExpand" Spacing="20">
+        <Button Clicked="CallRes_Clicked"  Text="Contact Restaurant" BackgroundColor="#5d878d" TextColor="White" FontSize="15" CornerRadius="13" HeightRequest="45" HorizontalOptions="FillAndExpand"></Button>
+      </StackLayout>
+
+
+    </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

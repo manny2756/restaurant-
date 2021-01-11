@@ -7,36 +7,167 @@
              x:Class="Restaurant.Sales">
   <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
     <ContentView.Content>
-    <ScrollView> 
-        <StackLayout>
-        
-        <BoxView HeightRequest="1" BackgroundColor="#e5e5e5"/>
-          
-        <StackLayout Padding=" 10" Orientation="Horizontal" HeightRequest="110">
-        <Image Source="Cashrewards.png" HeightRequest="100"/>
-        <Label Text="My Rewards: 25 pts" FontSize="20" FontAttributes="Bold" TextColor="Black"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-        <Image Source="arrow.png" HeightRequest="20"/>
-      </StackLayout>
-      <BoxView HeightRequest="1" BackgroundColor="#e5e5e5"/>
+    <StackLayout>
       
-      <StackLayout Padding=" 10" Orientation="Horizontal" HeightRequest="110">
-          <Image Source="pastorders.png" HeightRequest="100"/>
-          <Label Text="Past Orders" FontSize="20" TextColor="Black" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand"/>
-        <Image Source="arrow.png" HeightRequest="20"/>
+   
+    <ScrollView>
+      <StackLayout Padding="10,0" Spacing="0">
+        <Label Text="Rewards" TextColor="#5d878d" FontSize="28" HorizontalOptions="Start" FontAttributes="Bold"/>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="35"/>
+            
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="52"/> 
+            <ColumnDefinition Width="35"/> 
+            <ColumnDefinition Width="85"/> 
+            <ColumnDefinition Width="1"/> 
+            <ColumnDefinition Width="150"/> 
+            <ColumnDefinition Width="50"/> 
+            
+          </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="0" Text="Cash:" TextColor="Black" FontSize="20" FontAttributes="Bold">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="1" Text="$10" TextColor="#bd2c36" FontSize="18" FontAttributes="Bold">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="Earn 5pts for every $1 spent Get another 300 points for $10" FontSize="14" FontAttributes="Bold" TextColor="Black">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+          <BoxView Grid.Row="0" Grid.RowSpan="4" Grid.Column=" 3" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
+          <Image Margin="6" Grid.Row="0" Grid.RowSpan="4" Grid.Column="4" Source="rewardcircle.png" HeightRequest="130" VerticalOptions="Center" />
+          <Image Grid.Row="1" Grid.RowSpan="3" Grid.Column="4" Source="logo01.png" HeightRequest="55" VerticalOptions="Start" />
+            <Label Grid.Row="3" Grid.Column="4"  Text="182" TextColor="#5d878d" FontSize="16" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TranslationX="-20">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Grid.Row="3" Grid.Column="4"  Text="/300" TextColor="Black" FontSize="14" HorizontalOptions="Center" FontAttributes="Bold" TranslationX="10" TranslationY="8">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Grid.Row="4" Grid.Column="4"  Text="300pts = " FontSize="12" FontAttributes="Bold" TextColor="#5d878d"  HorizontalOptions="Center" >
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+            <Label Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="5"  Text="$5" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#bd2c36" HorizontalTextAlignment="Start">
+              <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Label.FontFamily>
+            </Label>
+
+        </Grid>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        <StackLayout Padding=" 10" Spacing="20">
+            <Label Text="Orders" TextColor="#5d878d" FontSize="28" HorizontalOptions="Start" FontAttributes="Bold">
+              
+            </Label>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="23"/>
+              <RowDefinition Height="23"/>
+              <RowDefinition Height="23"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="25"/>
+              <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+              <!--<Image  Source="check.png" HorizontalOptions="Start"/>-->
+              <restaurant:RestaurantCheck Grid.Row="0" Grid.Column="0" IsChecked="True"></restaurant:RestaurantCheck>
+              
+              <!--<Label Grid.Row="0" Grid.Column="1" Text="Blue Berry Pancakes" FontSize="14" TextColor="Black"  HorizontalOptions="Start" >
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>-->
+              <restaurant:RestaurantCheck Grid.Row="1" Grid.Column="0" IsChecked="True"></restaurant:RestaurantCheck>
+            <!--<Image  Source="check.png"  HorizontalOptions="Start" />-->
+              <!--<Label Grid.Row="1" Grid.Column="1" Text="Waffles" FontSize="14" TextColor="Black">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>-->
+            <!--<Image Grid.Row="2" Grid.Column="0" Source="check.png"  HorizontalOptions="Start"/>-->
+              <restaurant:RestaurantCheck Grid.Row="2" Grid.Column="0" IsChecked="True"></restaurant:RestaurantCheck>
+
+              <!--<Label Grid.Row="2" Grid.Column="1" Text="Scramble Breakfast" TextColor="Black">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>-->
+            
+          </Grid>
+
+
+        </StackLayout>
+       
       </StackLayout>
-       <BoxView HeightRequest="1" BackgroundColor="#e5e5e5"/>
-          
-        <StackLayout Padding=" 10" Orientation="Horizontal" HeightRequest="110">
-          <Image Source="popular.png" HeightRequest="110" HorizontalOptions="Start"/>
-          <Label Text="Popular" FontSize="20" TextColor="Black" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand"/>
-          <Image Source="arrow.png" HeightRequest="20"/>
-        </StackLayout>
-        <BoxView HeightRequest="1" BackgroundColor="#e5e5e5"/>
-          
-        </StackLayout>
+       
     </ScrollView>
+      <StackLayout Orientation="Horizontal" Padding="0,0,20,0" BackgroundColor="Transparent" HeightRequest="30">
+        <Label Text="Cost:" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="End" FontAttributes="Bold">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <On Platform="iOS">NotoSans-Regular</On>
+              <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+        <Label Text="$26.99" TextColor="#bd2c36" FontSize="25" HorizontalOptions="End" VerticalOptions="EndAndExpand">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <On Platform="iOS">NotoSans-Regular</On>
+              <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+
+        </StackLayout>
+    </StackLayout>
 
   </ContentView.Content>
 </ContentView>

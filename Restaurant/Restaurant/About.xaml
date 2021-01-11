@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.About">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout Padding="0,0,0,0" Spacing="0">
+      <restaurant:NavBar Image="" ></restaurant:NavBar>
+      <StackLayout Grid.Row="0" BackgroundColor="Black" Spacing="0" VerticalOptions="Fill">
+        <!--top pic and logo-->
+        <Grid VerticalOptions="StartAndExpand" RowSpacing="0" >
+          <Grid.RowDefinitions>
+            <RowDefinition Height="175"/>
+
+          </Grid.RowDefinitions>
+          <Image Grid.Row="0"   Source="topfoodlayout.png" Aspect="AspectFill" VerticalOptions="FillAndExpand" Opacity="0.5"/>
+          <Image Grid.Row="0" Source="logo01.png " VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest=" 100"/>
+        </Grid>
+      </StackLayout>
+      <StackLayout Padding="20" Spacing="20">
+        <Label Text="About Us" TextColor="#5d878d" FontSize=" 24" FontAttributes="Bold"/>
+        <Label Text="Building a Foundation of Quality" TextColor="Black" FontSize="16" FontAttributes="Bold"/>
+        <Label Text=" The secret to success is much like the secret to making quality food - the more you put in the more you get out of it. Our customers family is as hungry for perfection today as we were when we first opened our doors more than 30 years ago. We are driven to be the best at making innovative new products and receipies
+                    We dont use cheap and processed ingredients. Whether its our signiture sauce , toppings, our original fresh vegetables, or event the utensils, we inveest in our ingredients to ensure that we always give you the finest quality of food"
+                     TextColor="Black" FontSize=" 13" />
+      </StackLayout>
+      
+          
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

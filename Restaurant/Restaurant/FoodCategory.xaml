@@ -6,18 +6,21 @@
              mc:Ignorable="d"
              x:Class="Restaurant.FoodCategory">
   <ContentView.Content>
-    
-      <StackLayout HeightRequest="110" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
-      <StackLayout HeightRequest="109" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10,0">
-        <Image HeightRequest="50"  WidthRequest="85" HorizontalOptions="End" Source="{Binding LeftImage}"></Image>
-        <Label Text="{Binding CategoryName}"   VerticalOptions="CenterAndExpand"  HorizontalOptions="Start" FontSize="Large" FontAttributes="Bold" TextColor="#5d878d" />
-        <Image HeightRequest="20" HorizontalOptions="EndAndExpand" Source="{Binding Image}" ></Image>
-      </StackLayout>
+
+    <StackLayout Padding="0" HeightRequest="75" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+      
+      <StackLayout HeightRequest="74" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10,10" BackgroundColor="White">
+        
+
+          <Label Text="{Binding FoodName}"   VerticalOptions="Start"  HorizontalOptions="Start" FontSize="Large"  TextColor="Black" />
+          <Image HeightRequest="20" HorizontalOptions="EndAndExpand" Source="{Binding Image}" ></Image>
+        
+        </StackLayout>
+        
       <BoxView BackgroundColor="#e5e5e5" HeightRequest="1" HorizontalOptions="FillAndExpand" ></BoxView>
         <StackLayout.GestureRecognizers>
-        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-
-      </StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+        </StackLayout.GestureRecognizers>
 
     </StackLayout>
   </ContentView.Content>

@@ -68,19 +68,19 @@ namespace Restaurant
 
                                                          defaultBindingMode: BindingMode.TwoWay
                                                          );
-    public string CategoryName
+    public string FoodName
 
     {
 
-      get => (string)GetValue(CategoryNameProperty);
+      get => (string)GetValue(FoodNameProperty);
 
-      set => SetValue(CategoryNameProperty, value);
+      set => SetValue(FoodNameProperty, value);
 
     }
 
-    public static readonly BindableProperty CategoryNameProperty = BindableProperty.Create(
+    public static readonly BindableProperty FoodNameProperty = BindableProperty.Create(
 
-                                                         propertyName: "CategoryName",
+                                                         propertyName: "FoodName",
 
                                                          returnType: typeof(string),
 
@@ -92,15 +92,42 @@ namespace Restaurant
                                                          );
 
 
+    public FoodItemInfo FoodInfo { get; set; }
     public FoodItem()
     {
       InitializeComponent();
-      BindingContext = this;
+      FoodInfo = new FoodItemInfo { Title = "Pasta e Fagioli" };
+      BindingContext = FoodInfo;
+    }
+
+    public FoodItem(FoodItemInfo f)
+    {
+      FoodInfo = f;
+      FoodName = f.Title;
+      LeftImage = f.LeftImage;
+      BindingContext = FoodInfo;
+      InitializeComponent();
+      
+
     }
 
     private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     {
-
+      Navigation.PushAsync(new ItemPage(FoodInfo));
     }
+
+    
+  }
+
+  public class FoodItemInfo
+  {
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public double Price { get; set; }
+    public string LeftImage { get; internal set; }
+    public string CategoryId { get; internal set; }
+    public List<string> Options { get; internal set; } = new List<string>();
+
+
   }
 }

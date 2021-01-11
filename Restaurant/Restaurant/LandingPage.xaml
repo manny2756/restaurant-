@@ -12,16 +12,14 @@
     <StackLayout Padding="0" BackgroundColor="Black" >
       <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-        <Image Grid.Row="0" Aspect="AspectFill" Source="foodlayout.png" Opacity="0.5" />
-        <StackLayout Grid.Row="0" >
+        <Image Grid.Row="0" Aspect="AspectFill" Source="foodlayout.png" Opacity="0.5" VerticalOptions="CenterAndExpand"/>
+        <StackLayout Grid.Row="0" Padding="65,100,65,0" >
           
-       <Image Source="burger.png"></Image>
-        <StackLayout  >
-
-
-
-            <StackLayout Spacing="20" Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="40,0" Margin="0,50,0,65">
-          <Button Clicked="Menu_Clicked"  Text="Menu" HorizontalOptions="Fill"  FontSize="35" BackgroundColor="White" TextColor="Black" Opacity="0.81">
+        <Image Source="logo01.png" HeightRequest="120" ></Image>
+        <Label Text="Your Logo Here " TextColor="White" HorizontalOptions="Center" FontSize="18"></Label>
+          
+        <StackLayout Spacing="60" VerticalOptions="CenterAndExpand"  > <!--Menu and Specials Buttons-->
+          <Button Clicked="Menu_Clicked"  Text="Menu" HorizontalOptions="Fill"  FontSize="30" BackgroundColor="White" TextColor="Black" Opacity="0.81">
           <Button.WidthRequest>
             <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
           </Button.WidthRequest>
@@ -31,44 +29,70 @@
           <Button.BorderRadius>
             <OnIdiom x:TypeArguments="x:Int32" Phone="20" Tablet="40" />
           </Button.BorderRadius>
-        </Button>
-          <Button Clicked="Specials_Clicked" Opacity="0.81" Text="Specials"  BackgroundColor="White" TextColor="Black" FontSize="35"  >
-          <Button.WidthRequest>
-            <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
-          </Button.WidthRequest>
-          <Button.HeightRequest>
-            <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
-          </Button.HeightRequest>
-          <Button.BorderRadius>
-            <OnIdiom x:TypeArguments="x:Int32" Phone="20" Tablet="40" />
-          </Button.BorderRadius>
-        </Button>
+              <Button.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS">NotoSans-Regular</On>
+                <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+              </OnPlatform>
+              </Button.FontFamily>
           
-      </StackLayout>
-            <Grid>
-
-
-              <Frame   Padding="0" HorizontalOptions="Center" VerticalOptions="EndAndExpand"  HeightRequest="45" MinimumWidthRequest="100"  WidthRequest="200"
-              Opacity="0.4"   BorderColor="White" CornerRadius="22.5"  BackgroundColor="Black" >
-                
-                
+            </Button>
+          <Button Clicked="Specials_Clicked" Opacity="0.81" Text="Specials"  BackgroundColor="White" TextColor="Black" FontSize="30"  >
+              <Button.WidthRequest>
+                <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
+              </Button.WidthRequest>
+              <Button.HeightRequest>
+                <OnIdiom x:TypeArguments="x:Double" Phone="65" Tablet="80" />
+              </Button.HeightRequest>
+              <Button.BorderRadius>
+                <OnIdiom x:TypeArguments="x:Int32" Phone="20" Tablet="40" />
+              </Button.BorderRadius>
+              <Button.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <On Platform="iOS">NotoSans-Regular</On>
+                  <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                </OnPlatform>
+              </Button.FontFamily>
+            </Button>
+        </StackLayout>
+          <StackLayout HeightRequest="46" Margin="0,-60,0,0" Padding="0" VerticalOptions="CenterAndExpand" > <!--signin plus guest-->
+            <Grid> <!--signin button-->
+              <Frame   Padding="0" HorizontalOptions="Center" VerticalOptions="EndAndExpand"  HeightRequest="45" MinimumWidthRequest="100" 
+                       WidthRequest="200" Opacity="0.3"  BorderColor="#707070" CornerRadius="22.5"  BackgroundColor="Black" >
               </Frame>
-              <Label Text="Sign in" Opacity="1" TextColor="#fffcfc" FontSize="18" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-
-                <Grid.GestureRecognizers >
-
-                  <TapGestureRecognizer Tapped="Signin_Clicked">
-
-                  </TapGestureRecognizer>
-
-                </Grid.GestureRecognizers>
-
-
+              <Label Text="Sign In" Opacity="1" TextColor="#fffcfc" FontSize="18" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>
+              <Grid.GestureRecognizers >
+                <TapGestureRecognizer Tapped="Signin_Clicked"></TapGestureRecognizer>
+              </Grid.GestureRecognizers>
             </Grid>
-
-
-
+          
+            <!--<Grid> --><!--Guest--><!--
+              <Frame   Padding="0" HorizontalOptions="Center" VerticalOptions="EndAndExpand"  HeightRequest="45" MinimumWidthRequest="100" 
+                       WidthRequest="200" Opacity="0.3"  BorderColor="#707070" CornerRadius="22.5"  BackgroundColor="Black" >
+              </Frame>
+              <Label Text="Sign In As Guest" Opacity="1" TextColor="#fffcfc" FontSize="20" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Label.FontFamily>
+                  <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS">NotoSans-Regular</On>
+                    <On Platform="Android">NotoSans-Regular.ttf#NotoSans-Regular</On>
+                  </OnPlatform>
+                </Label.FontFamily>
+              </Label>
+              <Grid.GestureRecognizers >
+                <TapGestureRecognizer Tapped="Guest_Clicked1"></TapGestureRecognizer>
+              </Grid.GestureRecognizers>
+            </Grid-->
           </StackLayout>
+
+
+
         </StackLayout>
       </Grid>
     </StackLayout>

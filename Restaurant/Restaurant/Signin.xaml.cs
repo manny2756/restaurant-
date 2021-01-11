@@ -33,7 +33,22 @@ namespace Restaurant
       MainPage.Current.HomeView.IsVisible = false;
       MainPage.Current.MenuPage.IsVisible = false;
       MainPage.Current.SalesPage.IsVisible = true;
-      MainPage.Current.ServicesPage.IsVisible = false;
+      MainPage.Current.SpecialsPage.IsVisible = false;
+    }
+
+    private void SignIn_Clicked1(object sender, EventArgs e)
+    {
+      Navigation.PushAsync(new MainPage());
+      MainPage.Current.HomeView.IsVisible = false;
+      MainPage.Current.MenuPage.IsVisible = false;
+      MainPage.Current.SalesPage.IsVisible = true;
+      MainPage.Current.SpecialsPage.IsVisible = false;
+    }
+
+    private void Slider_Tapped(object sender, EventArgs e)
+    {
+      Slider.Source = ImageSource.FromFile("sliderflip.png");
+      
     }
   }
 }

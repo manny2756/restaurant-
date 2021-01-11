@@ -12,23 +12,23 @@ namespace Restaurant
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class FoodCategory : ContentView
   {
-    public string CategoryName
+    public string FoodName
 
     {
 
-      get => (string)GetValue(CategoryNameProperty);
+      get => (string)GetValue(FoodNameProperty);
 
-      set => SetValue(CategoryNameProperty, value);
+      set => SetValue(FoodNameProperty, value);
 
     }
 
-    public static readonly BindableProperty CategoryNameProperty = BindableProperty.Create(
+    public static readonly BindableProperty FoodNameProperty = BindableProperty.Create(
 
-                                                         propertyName: "CategoryName",
+                                                         propertyName: "FoodName",
 
                                                          returnType: typeof(string),
 
-                                                         declaringType: typeof(FoodCategory),
+                                                         declaringType: typeof(FoodItem),
 
                                                          defaultValue: "",
 
@@ -49,7 +49,7 @@ namespace Restaurant
                                                          propertyName: "Image",
                                                          returnType: typeof(string),
 
-                                                         declaringType: typeof(FoodCategory),
+                                                         declaringType: typeof(FoodItem),
 
                                                          defaultBindingMode: BindingMode.TwoWay
                                                          );
@@ -68,7 +68,7 @@ namespace Restaurant
                                                          propertyName: "LeftImage",
                                                          returnType: typeof(string),
 
-                                                         declaringType: typeof(FoodCategory),
+                                                         declaringType: typeof(FoodItem),
 
                                                          defaultBindingMode: BindingMode.TwoWay
                                                          );
@@ -99,9 +99,8 @@ namespace Restaurant
 
     private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     {
-      Menu.Current.HideCategories();
-      Menu.Current.SetCatTitle(CategoryName);
-      Menu.Current.LoadFoodItemsForCategory(CategoryId);
+      Navigation.PushAsync(new CategoryItems(CategoryId));
+     
     }
   }
 }

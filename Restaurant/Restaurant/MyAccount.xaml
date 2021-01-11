@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.MyAccount">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,0,20" Spacing="10">
+      <restaurant:NavBar Image=""></restaurant:NavBar>
+      <Image  Source="logo01.png" HeightRequest="80" HorizontalOptions="CenterAndExpand" ></Image>
+          
+      <StackLayout Padding="25,20,20,20" Spacing="0" >
+        <Label Text="My Account"  TextColor="#5d878d" FontSize="24" HorizontalOptions="Start" FontAttributes="Bold"/>
+        <StackLayout Padding="0" Spacing="0" VerticalOptions="Center" Margin="0,15,0,0">
+          
+        <Label Text="Name" TextColor="Black" FontSize="12" FontAttributes="Bold"  HorizontalOptions="Start" />
+        <Entry Placeholder="Joshua Contreras" FontSize="12" PlaceholderColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="End"/>
+        <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
+        <Label Text="Email" TextColor="Black" FontSize="12" FontAttributes="Bold"  HorizontalOptions="Start"/>
+        <Entry Placeholder="Joshua_Contreras@Gmail.com" FontSize="12"  PlaceholderColor="Black" HorizontalTextAlignment="Start"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="StartAndExpand"/>
+        <Label Text="Address" TextColor="Black" FontSize="12" FontAttributes="Bold"  HorizontalOptions="Start" />
+        <Entry  Placeholder="1432 Ventura Road" FontSize="12" PlaceholderColor="Black" HorizontalTextAlignment="Start"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="StartAndExpand"/>
+        <Label Text="Phone Number"  TextColor="Black" FontSize="12" FontAttributes="Bold"  HorizontalOptions="Start"/>
+        <Entry Placeholder="323-526-4971" Keyboard="Telephone" FontSize="12" PlaceholderColor="Black" HorizontalTextAlignment="Start"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="StartAndExpand"/>
+        <Label Text="Password" TextColor="Black" FontSize="12" FontAttributes="Bold"  HorizontalOptions="Start"/>
+        <Entry Placeholder="********" FontSize="12" HorizontalTextAlignment="Start" PlaceholderColor="Black"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="StartAndExpand"/>
+        <Label Text="Password Reset" TextColor="#5d878d" FontSize="8" HorizontalOptions="Start" />
+        <Label Text="Payment" TextColor="Black" FontSize="12" FontAttributes="Bold"  HorizontalOptions="Start" />
+        <Entry Placeholder="**** **** **** 4903" PlaceholderColor="Black" FontSize="12" HorizontalTextAlignment="Start"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="StartAndExpand"/>
+        </StackLayout>
+      </StackLayout>
+      
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

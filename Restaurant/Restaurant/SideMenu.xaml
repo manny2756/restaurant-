@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.SideMenu">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#d7ecee" Padding="30" >
+      <Image Source="X.png" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="Ex_Tapped"></TapGestureRecognizer>
+        </Image.GestureRecognizers>
+      </Image>
+        <StackLayout Padding="0,50,0,0" Spacing="25" HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+        <Label Text="Restaurant name" FontAttributes="Bold" FontSize="24" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="Black" />
+
+
+        <Label Text="About" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="Black">
+           <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="AboutUs_Tapped"></TapGestureRecognizer>
+          </Label.GestureRecognizers>
+        </Label>
+
+        <Label Text="Write a Review" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="Black">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Review_Tapped"></TapGestureRecognizer>
+          </Label.GestureRecognizers>
+        </Label>
+        <Label Text="My Account" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="Black">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Account_Tapped"></TapGestureRecognizer>
+          </Label.GestureRecognizers>
+        </Label>
+        <Label Text="Sign out" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" TextColor="Black">
+          <Label.GestureRecognizers>
+            <TapGestureRecognizer Tapped="SignOut_Tapped"></TapGestureRecognizer>
+          </Label.GestureRecognizers>
+        </Label>
+      </StackLayout>
+      
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

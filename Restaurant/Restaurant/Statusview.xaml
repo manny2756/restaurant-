@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.Statusview">
+ 
+      <StackLayout Padding="40,20,20,0">
+        
+    <Grid >
+      <Grid.RowDefinitions>
+        <RowDefinition Height=" 20" />
+        <RowDefinition Height="40"/>
+        <RowDefinition Height="20"/>
+      </Grid.RowDefinitions>
+      
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="85"/>
+        <ColumnDefinition Width="85"/>
+        <ColumnDefinition Width="60"/>
+        <ColumnDefinition Width="85"/>
+      </Grid.ColumnDefinitions>
+      
+      <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Text="Order Placed" TextColor="Black" HorizontalTextAlignment="Start" TranslationX="-20"></Label>
+      <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Text="Ready" TextColor="Black" HorizontalTextAlignment="End" TranslationX="15" ></Label>
+      
+       <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"  HorizontalOptions="Center" RowSpacing="0" ColumnSpacing="10" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="13.5"/>
+        <RowDefinition Height="3"/>
+        <RowDefinition Height="13.5"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30" />
+        <ColumnDefinition Width="30" />
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="30"/>
+        
+      </Grid.ColumnDefinitions>
+
+      <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" x:Name="RedOne"  BackgroundColor="#bd2c36" CornerRadius="100"  VerticalOptions="Center"/>
+      <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" x:Name="FirstCircle"  BackgroundColor="White" CornerRadius="100" Margin="4" Opacity="1" VerticalOptions="Center"/>
+      <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#bd2c36"/>
+      <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" x:Name="RedTwo" BackgroundColor="#bd2c36" CornerRadius="100" VerticalOptions="Center" />
+      <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" x:Name="SecCircle" BackgroundColor="White" Margin="4" Opacity="1" CornerRadius="100" VerticalOptions="Center" />
+      <Frame Grid.Row="1" Grid.Column="3" BackgroundColor="#bd2c36"/>
+      <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="4" x:Name="Redthree"  BackgroundColor="#bd2c36" CornerRadius="100" VerticalOptions="Center" />
+      <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="4" x:Name="ThirdCircle"  BackgroundColor="White" Margin="4" Opacity="1" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Center" />
+       <Frame Grid.Row="1" Grid.Column="5" BackgroundColor="#bd2c36"/>
+      <Frame Grid.Row="0"  Grid.RowSpan="3" Grid.Column="6" x:Name="RedFour"  BackgroundColor="#bd2c36" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Start"/>
+      <Frame Grid.Row="0"  Grid.RowSpan="3" Grid.Column="6" x:Name="FourthCircle"  BackgroundColor="White" Margin="4" Opacity="1" CornerRadius="100" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+    </Grid>
+      <Label Grid.Row="2" Grid.Column="1" Text="Confirmed" TextColor="Black" HorizontalTextAlignment="Start" TranslationX="-20"/>
+      <Label Grid.Row="2" Grid.Column="3" Text="Complete" TextColor="Black" TranslationX="-15"/>
+    </Grid>
+     
+        
+
+        
+    </StackLayout>
+  
+  
+</ContentView>

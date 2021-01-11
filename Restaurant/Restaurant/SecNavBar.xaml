@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Restaurant.SecNavBar">
+  
+    <StackLayout Orientation="Horizontal" Padding="10,0,20,0" >
+
+
+      <Image Source="redarrow.png" VerticalOptions="EndAndExpand" HorizontalOptions="Start" HeightRequest="45" TranslationY="-8" />
+      <Label Text=" Restaurant Name " FontAttributes="Bold" TextColor="#5d878d" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+      <Image Source="X.png" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="20">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="X_Tapped"></TapGestureRecognizer>
+        </Image.GestureRecognizers>
+      </Image>
+    </StackLayout>
+  
+</ContentView>

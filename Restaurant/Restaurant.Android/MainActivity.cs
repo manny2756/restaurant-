@@ -6,6 +6,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms;
+using Android.Content;
+using Android.Graphics.Drawables;
+using Android.Content.Res;
+using Android.Text;
+using Restaurant.Droid;
+
+[assembly: ExportRenderer(typeof(Entry), typeof(CustomEntryRenderer))]
+[assembly: ExportRenderer(typeof(Editor), typeof(CustomEditorRenderer))]
+
 
 namespace Restaurant.Droid
 {
@@ -30,4 +41,44 @@ namespace Restaurant.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+
+  public class CustomEntryRenderer : EntryRenderer
+  {
+
+    public CustomEntryRenderer(Context context) : base(context)
+    {
+
+    }
+    protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+    {
+      base.OnElementChanged(e);
+
+      if (Control != null)
+      {
+       
+        this.Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
+        
+      }
+    }
+  }
+
+  public class CustomEditorRenderer : EditorRenderer
+  {
+
+    public CustomEditorRenderer(Context context) : base(context)
+    {
+
+    }
+    protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+    {
+      base.OnElementChanged(e);
+
+      if (Control != null)
+      {
+
+        this.Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+      }
+    }
+  }
 }

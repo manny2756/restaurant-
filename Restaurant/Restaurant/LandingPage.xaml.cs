@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace Restaurant
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -19,26 +20,36 @@ namespace Restaurant
 
         private void Menu_Clicked(object sender, EventArgs e)
         {
-          Navigation.PushAsync(new MainPage());
+          Navigation.PushAsync(new MainPage("Menu"));
           MainPage.Current.HomeView.IsVisible = false;
           MainPage.Current.MenuPage.IsVisible = true;
           MainPage.Current.SalesPage.IsVisible = false;
-          MainPage.Current.ServicesPage.IsVisible = false;
+          MainPage.Current.SpecialsPage.IsVisible = false;
           
-        }
+          
+
+    }
 
     private void Specials_Clicked(object sender, EventArgs e)
     {
-      Navigation.PushAsync(new MainPage());
+      Navigation.PushAsync(new MainPage("Specials"));
       MainPage.Current.HomeView.IsVisible = false;
       MainPage.Current.MenuPage.IsVisible = false;
       MainPage.Current.SalesPage.IsVisible = false;
-      MainPage.Current.ServicesPage.IsVisible = true;
+      MainPage.Current.SpecialsPage.IsVisible = true;
+      
+
+
     }
 
     private void Signin_Clicked(object sender, EventArgs e)
     {
       Navigation.PushAsync(new Signin());
+    }
+
+    private void Guest_Clicked1(object sender, EventArgs e)
+    {
+      Navigation.PushAsync(new ContinueAsGuest());
     }
   }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Restaurant.MenuCache;
 
 namespace Restaurant
 {
@@ -13,38 +14,71 @@ namespace Restaurant
   public partial class Menu : ContentView
   {
     public static Menu Current { get; set; }
-    public List<FoodItem> MenuItems { get; set; }
+
     public Menu()
     {
       InitializeComponent();
-      MenuItems = new List<FoodItem> { new FoodItem { CategoryId = "Breakfast", CategoryName="Pancakes",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Breakfast", CategoryName="Sunny Side Breakfast",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Breakfast", CategoryName="Blue Berry Pancakes",LeftImage="pancakes.png" },
-       new FoodItem { CategoryId = "Breakfast", CategoryName="Scrabble Breakfast",LeftImage="entrees.png" },
-       new FoodItem { CategoryId = "Breakfast", CategoryName="Waffles",LeftImage="waffles.png" },
-       new FoodItem { CategoryId = "Meals", CategoryName="Chicken Wings",LeftImage="spicychickenwings.png" },
-       new FoodItem { CategoryId = "Meals", CategoryName="Cheese Burger",LeftImage="cheeseburger.png" },
-       new FoodItem { CategoryId = "Meals", CategoryName="Taco Tuesday",LeftImage="tacos.png" },
-       new FoodItem { CategoryId = "Meals", CategoryName="Jam Jimbalaya",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Drinks", CategoryName="Mtn Dew",LeftImage="mountaindew.png" },
-       new FoodItem { CategoryId = "Drinks", CategoryName="Sprite",LeftImage="sprite.png" },
-       new FoodItem { CategoryId = "Drinks", CategoryName="7up",LeftImage="sevup.png" },
-       new FoodItem { CategoryId = "Drinks", CategoryName="Pepsi",LeftImage="pepsi.png" },
-       new FoodItem { CategoryId = "Drinks", CategoryName="Coke",LeftImage="coke.png" },
-       new FoodItem { CategoryId = "Drinks", CategoryName="Water",LeftImage="water.png" },
-       new FoodItem { CategoryId = "Appetizers", CategoryName="Sunny Prawns",LeftImage="sunnyprawns.png" },
-       new FoodItem { CategoryId = "Appetizers", CategoryName="Spicy Meatballs",LeftImage="meatballs.png" },
-       new FoodItem { CategoryId = "Appetizers", CategoryName="Fried Shrimp",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Appetizers", CategoryName="Spicy Chicken Wings",LeftImage="spicychickenwings.png" },
-       new FoodItem { CategoryId = "Appetizers", CategoryName="Panini",LeftImage="panini.png" },
-       new FoodItem { CategoryId = "Other", CategoryName="Chocolate Chip Cookies",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Other", CategoryName="Milk Shake",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Other", CategoryName="Cake",LeftImage="breakFast2.png" },
-       new FoodItem { CategoryId = "Other", CategoryName="Ice Cream",LeftImage="icecream.png" },
-       new FoodItem { CategoryId = "Other", CategoryName = "Cookie w/ Ice Cream", LeftImage = "pizookie.png" }};
-                     
+      MenuItems = new List<FoodItemInfo> { new FoodItemInfo { CategoryId = "Breakfast", Title="Pancakes",LeftImage="breakFast2.png"} ,
+       new FoodItemInfo { CategoryId = "Breakfast", Title="Sunny Side Breakfast",LeftImage="breakFast2.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage"} },
+       new FoodItemInfo { CategoryId = "Breakfast", Title="Blue Berry Pancakes",LeftImage="pancakes.png", Options= new List<string>{ "No Blueberries", "No Butter", "No Syrup","Add More Pancackes", "Add Bacon"}  },
+       new FoodItemInfo { CategoryId = "Breakfast", Title="Scrabble Breakfast",LeftImage="entrees.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Breakfast", Title="Waffles",LeftImage="waffles.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Meals", Title="Chicken Wings",LeftImage="spicychickenwings.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Meals", Title="Cheese Burger",LeftImage="cheeseburger.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Meals", Title="Taco Tuesday",LeftImage="tacos.png"  , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Meals", Title="Jam Jimbalaya",LeftImage="jimbalaya.png"  , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Drinks", Title="Mtn Dew",LeftImage="mountaindew.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Drinks", Title="Sprite",LeftImage="sprite.png", Options = new List<string> { "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Drinks", Title="7up",LeftImage="sevup.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Drinks", Title="Pepsi",LeftImage="pepsi.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Drinks", Title="Coke",LeftImage="coke.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Drinks", Title="Water",LeftImage="water.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Appetizers", Title="Sunny Prawns",LeftImage="sunnyprawns.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Appetizers", Title="Spicy Meatballs",LeftImage="meatballs.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Appetizers", Title="Fried Shrimp",LeftImage="breakFast2.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Appetizers", Title="Spicy Chicken Wings",LeftImage="spicychickenwings.png" , Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" } },
+       new FoodItemInfo { CategoryId = "Appetizers", Title="Panini",LeftImage="panini.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Other", Title="Chocolate Chip Cookies",LeftImage="cookies.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Other", Title="Milk Shake",LeftImage="breakFast2.png", Options= new List<string>{ "No Sausage", "No Beans", "No Bacon", "Add Extra Bacon", "Add Extra Sausage" }  },
+       new FoodItemInfo { CategoryId = "Other", Title="Cake",LeftImage="breakFast2.png", Options= new List<string>{ "asdnfdkfasdfd-w3737fjsd", "aksdfasdfakal;jdseis"}  },
+       new FoodItemInfo { CategoryId = "Other", Title="Ice Cream",LeftImage="icecream.png" , Options= new List<string>{ "asdnfdkfasdfd-w3737fjsd", "aksdfasdfakal;jdseis"} },
+       new FoodItemInfo { CategoryId = "Other", Title = "Cookie w/ Ice Cream", LeftImage = "pizookie.png" , Options= new List<string>{ "asdnfdkfasdfd-w3737fjsd", "aksdfasdfakal;jdseis"} } };
+
+      MenuOptions = new List<FoodOption>
+      {
+        new FoodOption{Title = "Mild"}
+      };
+
+      InsertFoodOptions();
+
+      //Here you need to create FoodOptions
+    
       Current = this;
+      BindingContext = this;
       ItemsScroll.TranslationX = CategoriesScroll.Width;
+    }
+
+    private void InsertFoodOptions()
+    {
+      foreach(FoodItemInfo f in MenuItems)
+      {
+        // f.Options.Add("No Sausage");
+        //or you could assign all at once
+        //f.Options = new List<string> { "gfgawsef44t65465453w", "gfgawsef44t65465453w", "gfgawsef44t65465453wp" };
+        //or search for a specific option and add
+        if (f.CategoryId == "Meals")
+        {
+          FoodOption option = MenuOptions?.Find(x => x.Title == "Mild");
+          if (option != null)
+          {
+            f.Options.Add(option.Id);
+          }
+        }
+        else if (f.CategoryId == "Breakfast")
+        {
+
+        }
+      }
     }
 
     public void ShowItems()
@@ -94,11 +128,13 @@ namespace Restaurant
 
     public void LoadFoodItemsForCategory(string categoryId)
     {
-      var items = MenuItems.FindAll(x => x.CategoryId == categoryId);
+      var items = MenuCache.MenuItems.FindAll(x => x.CategoryId == categoryId);
       FoodItemsStack.Children?.Clear();
-      foreach(FoodItem f in items)
+      foreach(FoodItemInfo f in items)
       {
-        FoodItemsStack.Children.Add(f);
+        FoodItem item = new FoodItem(f);
+       
+        FoodItemsStack.Children.Add(item);
       }
 
     }

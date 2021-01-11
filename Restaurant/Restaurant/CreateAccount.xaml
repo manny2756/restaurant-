@@ -2,28 +2,77 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
              mc:Ignorable="d"
              x:Class="Restaurant.CreateAccount">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+  
     <ContentPage.Content>
-    <StackLayout Padding=" 30" >
-      <Label Text="Create an Account " FontSize="Large" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
-      <StackLayout Padding="20">
+    <StackLayout>
+      
+    <restaurant:NavBar Image=""></restaurant:NavBar>
+    <StackLayout Padding="35,20,0,0" HorizontalOptions="Fill" >
+      
+      <Label Text="Create an account" TextColor="#5d878d" FontSize="25"  HorizontalOptions="Start"  VerticalOptions="CenterAndExpand">
+            <Label.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS">NotoSans-Black</On>
+                <On Platform="Android">NotoSans-Black.ttf#NotoSans-Black</On>
+              </OnPlatform>
+            </Label.FontFamily>
+          </Label>
        
-      
-          <Entry Placeholder="First Name" BackgroundColor="#e5e5e5" />
-          <Entry Placeholder="Last Name"/>
-          <Entry Placeholder="Email"/>
-          <Entry Placeholder="Create password"/>
-          <Entry Placeholder="Confirm password"/>
-          <Label Text="Date of Birth"/>
-      <StackLayout Orientation="Horizontal">
-        <DatePicker />
-      </StackLayout>
-      </StackLayout>
-      
-      <Button Text="Create account" Clicked="CreateAccount_Clicked" TextColor="White" BackgroundColor="#1DA1F2" VerticalOptions="EndAndExpand" />
+        <StackLayout Padding="0,25,45,0" Spacing="0" VerticalOptions="Center">
+          <!--<Image Source="logo01.png" HeightRequest="100"/>-->
+          <Label Text="Email" TextColor="Black" FontSize="12" FontAttributes="Bold"/>
+          <Entry Placeholder="Joshua_Contreras@gmail.com" FontSize="12" PlaceholderColor="Black"  BackgroundColor="White" Opacity="0.7"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
+          <Label Text="Full Name" TextColor="Black" FontSize="12" FontAttributes="Bold"/>
+          <Entry Placeholder="Joshua Contreras" PlaceholderColor="Black" FontSize="12" VerticalOptions="Start" HorizontalOptions="Start" BackgroundColor="White" Opacity="0.7" WidthRequest="400"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
+          <Label Text="Street Address" TextColor="Black" FontSize="12" FontAttributes="Bold"/>
+          <Entry Placeholder="1432 Ventura Road" PlaceholderColor="Black" FontSize="12"  VerticalOptions="Start"   BackgroundColor="White" Opacity="0.7" WidthRequest="135"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
+          <Label Text="Phone Number" TextColor="Black" FontSize="12" FontAttributes="Bold"/>
+          <Entry Placeholder="323-526-4971" PlaceholderColor="Black" FontSize="12" Keyboard="Numeric" VerticalOptions="Start" BackgroundColor="White" Opacity="0.7"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
+          <Label Text="Password" TextColor="Black" FontSize="12" FontAttributes="Bold"/>
+          <Entry Placeholder="************" PlaceholderColor="Black" IsPassword="True" FontSize="12" BackgroundColor="White" Opacity="0.7"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
+          <Label Text=" Confirm Password" TextColor="Black" FontSize="12" FontAttributes="Bold"/>
+          <Entry Placeholder="************" PlaceholderColor="Black" FontSize="12" IsPassword="True" BackgroundColor="White" Opacity="0.7"/>
+          <BoxView Margin="0,-9,0,15" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="Fill" VerticalOptions="Start"/>
 
+      </StackLayout>
+        <Grid Padding="0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="10"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="30"/>
+
+
+          </Grid.ColumnDefinitions>
+          <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text=" I understand and agree to the" TextColor="Black" FontSize="8" />
+          <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text=" Terms and Conditions " TextColor="red" FontSize="8" HorizontalTextAlignment="End" />
+          <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Text="and that my information  " TextColor="Black" FontSize="8" />
+          <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="will be used as described on this page and in the" TextColor="Black" FontSize="8" />
+          <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"  Text="Privacy Policy" TextColor="Red" FontSize="8" HorizontalTextAlignment="Center" TranslationX="-18"/>
+
+        </Grid>
+
+      </StackLayout>
+       <StackLayout VerticalOptions="EndAndExpand" Padding=" 35,0,35,10"> <!--Create Account Button-->
+            
+            <Button Text="Create Account" CornerRadius="15" BackgroundColor="#ecf5f6" Clicked="CreateAccount_Clicked" ></Button>
+            
+        </StackLayout> <!--Create Account Button-->
     </StackLayout>
+    <!--First Stack-->
     </ContentPage.Content>
 </ContentPage>

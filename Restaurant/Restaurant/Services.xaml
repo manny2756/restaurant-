@@ -7,16 +7,101 @@
              x:Class="Restaurant.Services">
  
     <ContentView.Content>
-    <ScrollView Grid.Row="0" Grid.Column="0" x:Name="CategoriesScroll">
-    <StackLayout Spacing="0"  >
-      <restaurant:FoodCategory LeftImage="pop.png" CategoryName="Breakfast" Image="arrow.png" CategoryId="Breakfast" ></restaurant:FoodCategory>
-      <restaurant:FoodCategory LeftImage="threeburgers.png" CategoryName="Meals"  Image="arrow.png" CategoryId="Meals"></restaurant:FoodCategory>
-      <restaurant:FoodCategory LeftImage="salads.png" CategoryName="Salads"  Image="arrow.png" CategoryId="Salads" ></restaurant:FoodCategory>
-      <restaurant:FoodCategory LeftImage="entrees.png" CategoryName="Appetizers"  Image="arrow.png" CategoryId="Appetizers"></restaurant:FoodCategory>
-      <restaurant:FoodCategory LeftImage="drinks.png" CategoryName="Drinks"  Image="arrow.png" CategoryId="Drinks"></restaurant:FoodCategory>
-      <restaurant:FoodCategory LeftImage="cookies.png" CategoryName="Other"  Image="arrow.png" CategoryId="Other"></restaurant:FoodCategory>
-    </StackLayout>
-     </ScrollView>
+
+    <ScrollView x:Name="CategoriesScroll">
+      <StackLayout Padding="10,20,0,0" Spacing="10" >
+        <Grid RowSpacing="10"> <!--1st Item-->
+          <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+                      
+            
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="130"/> 
+            <ColumnDefinition Width="137"/> 
+            <ColumnDefinition Width="85"/> 
+            <ColumnDefinition Width="75"/> 
+          </Grid.ColumnDefinitions>
+          <Frame Grid.Row="0" Grid.RowSpan="3"  Grid.Column="0" Padding="0" CornerRadius="10"  HeightRequest="80" WidthRequest="125" IsClippedToBounds="True">
+            <Image  Source="pasta.png" Aspect="AspectFill"/>
+          </Frame>
+          <Label Grid.Row="0" Grid.Column="1"  Text="Pasta e Fagioli" TextColor="#5d878d" FontSize="18" HorizontalTextAlignment="Start"/>
+          <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="White and red beans, ground beef, fresh&#10;tomatoes and tubetti pasta in a savory &#10;broth served with s side salad.
+                                                    &#10;150 cal per serving" TextColor="Black" FontSize="11" HorizontalTextAlignment="Start"/>
+          <Label Grid.Row="1" Grid.Column="2" Text="$5.99" HorizontalOptions="Center" HorizontalTextAlignment="center" TranslationY="5" VerticalTextAlignment="End" TextColor="#bd2c36"  FontSize="14"/>
+          <Label Grid.Row="2" Grid.Column="2" Text=" Add to Cart " TextColor="Black"  FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="Center" BackgroundColor="#d7e7ee" HeightRequest="20" />
+          <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Pasta_Tapped"/>
+          </Grid.GestureRecognizers>
+          
+        </Grid>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        <Grid RowSpacing="10"> <!--2nd Item-->
+          <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+
+
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="137"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="75"/>
+          </Grid.ColumnDefinitions>
+          <Frame Grid.Row="0" Grid.RowSpan="3"  Grid.Column="0" Padding="0" CornerRadius="10"  HeightRequest="80" WidthRequest="125" IsClippedToBounds="True">
+            <Image  Source="cheeseburger.png" Aspect="AspectFill"/>
+          </Frame>
+          <Label Grid.Row="0" Grid.Column="1"  Text="Cheeseburger" TextColor="#5d878d" FontSize="18" HorizontalTextAlignment="Start"/>
+          <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Beef patty, cheddar cheese, grilled onions&#10;and tomatoes, pickles, lettuce, ketchup,&#10;mayo, and mustard with a side of french fries
+                                                    &#10;204 cal per serving" TextColor="Black" FontSize="11" HorizontalTextAlignment="Start"/>
+          <Label Grid.Row="1" Grid.Column="2" Text="$9.99" HorizontalOptions="Center" HorizontalTextAlignment="center" TranslationY="5" VerticalTextAlignment="End" TextColor="#bd2c36"  FontSize="14"/>
+          <Label Grid.Row="2" Grid.Column="2" Text=" Add to Cart " TextColor="Black"  FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="Center" BackgroundColor="#d7e7ee" HeightRequest="20" />
+          <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Cheeseburger_Tapped"/>
+          </Grid.GestureRecognizers>
+
+        </Grid>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        <Grid RowSpacing="10"> <!--3rd Item-->
+          <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="10"/>
+
+
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="137"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="75"/>
+          </Grid.ColumnDefinitions>
+          <Frame Grid.Row="0" Grid.RowSpan="3"  Grid.Column="0" Padding="0" CornerRadius="10"  HeightRequest="80" WidthRequest="125" IsClippedToBounds="True">
+            <Image  Source="pasta.png" Aspect="AspectFill"/>
+          </Frame>
+          <Label Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2" Text="Jam with Jimbalaya" TextColor="#5d878d" FontSize="18" HorizontalTextAlignment="Start"/>
+          <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mild, medium tender chicken, mushroom&#10;garlic, onion, red pepper and sesame seeds. &#10;175 cal per serving" TextColor="Black" FontSize="11" HorizontalTextAlignment="Start"/>
+          <Label Grid.Row="1" Grid.Column="2" Text="$10.99" HorizontalOptions="Center" HorizontalTextAlignment="center" TranslationY="5" VerticalTextAlignment="End" TextColor="#bd2c36"  FontSize="14"/>
+          <Label Grid.Row="2" Grid.Column="2" Text=" Add to Cart " TextColor="Black"  FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="Center" BackgroundColor="#d7e7ee" HeightRequest="20" />
+          <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Jam_Tapped"/>
+          </Grid.GestureRecognizers>
+
+        </Grid>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+
+      </StackLayout>
+    </ScrollView>
 
 
   </ContentView.Content>

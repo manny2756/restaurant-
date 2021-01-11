@@ -7,7 +7,7 @@
              x:Class="Restaurant.Specials">
     <ContentView.Content>
         
-      <StackLayout HeightRequest="110" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+      <StackLayout Padding="10" HeightRequest="110" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
         <StackLayout HeightRequest="109" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10,0">
           <Image HeightRequest="60" WidthRequest="85" HorizontalOptions="End" Source="{Binding LeftImage}"></Image>
           <Label Text="{Binding CategoryName}" TextColor="#5d878d"  VerticalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"  HorizontalOptions="CenterAndExpand"/>

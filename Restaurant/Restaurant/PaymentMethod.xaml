@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.PaymentMethod">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+    <StackLayout Padding="0">
+      <restaurant:NavBar Image="bars.png"></restaurant:NavBar>
+      <Image  Source="logo01.png" HeightRequest="100"  HorizontalOptions="CenterAndExpand" ></Image>
+      <StackLayout Padding="0">
+        
+      
+      <Label Text="Payment Method" TextColor="#5d878d" FontSize="35"  HorizontalOptions="StartAndExpand" Padding="20,0,0,0"/>
+        <BoxView BackgroundColor="#e7e7e7" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+      <Grid Padding="40,10">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+          </Grid.ColumnDefinitions>
+        <Image Grid.Row="0" Grid.Column="0" Source="Visa.png" HeightRequest="40" HorizontalOptions="Start"/>
+        <Label Grid.Row="1" Grid.Column="0" Text="Card ending with" HorizontalOptions="Start" FontSize="10" TextColor="Black"/>
+          <Image Grid.Row="0" Grid.Column="3" x:Name="Visa" Source="check.png" HeightRequest="30" HorizontalOptions="EndAndExpand">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Visa_Tapped"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+        <Label Grid.Row="1" Grid.Column="3" Text="*1286" FontSize="12" HorizontalOptions="EndAndExpand" TextColor="Black"/>
+      </Grid>
+      <BoxView  HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#e7e7e7"/>
+        <StackLayout Padding="40,10" Orientation="Horizontal">
+          <Image  Source="mastercard.png" HeightRequest="40" HorizontalOptions="Start"/>
+          <Image x:Name="Master" Source="unchecked.png" HeightRequest="20" HorizontalOptions="EndAndExpand">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Master_Tapped"/>
+            </Image.GestureRecognizers>
+          </Image>
+        </StackLayout>
+        <BoxView  HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#e7e7e7"/>
+        <StackLayout Padding="40,10" Orientation="Horizontal">
+          <Image Source="paypal.png" HeightRequest="30" HorizontalOptions="Start"/>
+          <Image x:Name="Paypal" Source="unchecked.png" HeightRequest="20" HorizontalOptions="EndAndExpand">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Paypal_Tapped"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+        </StackLayout>
+        <BoxView  HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#e7e7e7"/>
+        <StackLayout Padding="40,10" Orientation="Horizontal">
+          <Label Text="Add New" FontSize="20" TextColor="Black"  HorizontalOptions="Start"/>
+          <Image x:Name="Plus" Source="plus.png" HeightRequest="20" HorizontalOptions="EndAndExpand">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Plus_Tapped"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+        </StackLayout>
+        <BoxView  HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="#e7e7e7"/>
+
+
+      </StackLayout>
+      
+      <Button Margin="20,40" Text="Place Order" TextColor="White" FontSize="18" FontAttributes="Bold" BackgroundColor="#bd2c36" CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" HeightRequest="45"/>
+
+    </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>

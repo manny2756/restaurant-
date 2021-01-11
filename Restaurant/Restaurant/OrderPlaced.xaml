@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:restaurant="clr-namespace:Restaurant"
+             mc:Ignorable="d"
+             x:Class="Restaurant.OrderPlaced">
+  <NavigationPage.HasNavigationBar>faLSE</NavigationPage.HasNavigationBar>
+    <ContentPage.Content>
+        <StackLayout  Padding="0,0,20,0" Spacing="20">
+      <restaurant:NavBar Image="X.png"></restaurant:NavBar>
+      <StackLayout Padding="20,0,0,0">
+      <Image Source="checked.png" HeightRequest="80"/>
+
+           <StackLayout Spacing="0">
+              <Label Text="Order Placed" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  TextColor="#5d878d" FontSize="40" FontAttributes="Bold"/>
+              <Label Text="             Your payment has been processed!&#10;Details of the transaction has been included below" VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"  FontSize="12"/>
+
+      </StackLayout>
+             <Label Text="Order Details" TextColor="Black" FontAttributes="Bold" FontSize="Medium" ></Label>
+      <Grid>
+        <Label Grid.Row="0" Grid.Column="0" Text="Order Date"></Label>
+        <Label Grid.Row="0" Grid.Column="1" Text="Jun 11, 2020" HorizontalOptions="End"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Text="Payment Type" ></Label>
+        <Label Grid.Row="1" Grid.Column="1" Text="Visa" HorizontalOptions="End"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Text="Order Number"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Text="12234562" HorizontalOptions="End"></Label>
+        <Label Grid.Row="3" Grid.Column="0" Text="Address"></Label>
+        <Label Grid.Row="3" Grid.Column="1" Text="1432 Ventura Road" HorizontalOptions="End"></Label>
+        <Label Grid.Row="5" Grid.Column="0" Text="Amount" FontAttributes="Bold" TextColor="Black"></Label>
+        <Label Grid.Row="5" Grid.Column="1" Text="$26.06" HorizontalOptions="End" FontAttributes="Bold" TextColor="Black"></Label>
+      </Grid>
+      <StackLayout VerticalOptions="EndAndExpand" Spacing="20">
+        <Button Clicked="OrderPlaced_Clicked" Text="Order Status" BackgroundColor="#bd2c36" TextColor="White" FontSize="18" CornerRadius="20" ></Button>
+        <Button Clicked="BackToMenu_Clicked" Text="Back to Menu" BackgroundColor="#5d878d" TextColor="White" FontSize="18" CornerRadius="20"></Button>
+      </StackLayout>
+
+
+
+
+
+      </StackLayout>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
